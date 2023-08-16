@@ -9,13 +9,22 @@ import SwiftUI
 
 struct FlightSearchResultCardView: View {
     var body: some View {
-        VStack(alignment: .leading) {
-            Text("Flight Number:")
-            Text("Departure Date:")
-            Text("Regular Fare:")
-        }
+        HStack {
+            Image(systemName: StringConstants.airplaneImg.rawValue)
+                .resizable()
+                .frame(width: 50, height: 50, alignment: .trailing)
+                .foregroundColor(.white)
+                .rotationEffect(.degrees(-30), anchor: .center)
+                .scaledToFill()
+                .imageScale(.large)
+            VStack(alignment: .leading) {
+                Text(StringConstants.flightNo.rawValue)
+                Text(StringConstants.flightdepDate.rawValue)
+                Text(StringConstants.regularFare.rawValue)
+            } // : VSTACK
+            .frame(maxWidth: .infinity, alignment: .leading)
+        } // : HSTACK
         .padding(20)
-        .frame(maxWidth: .infinity, alignment: .leading)
         .background(LinearGradient(gradient: Gradient(colors: [.indigo, .purple]), startPoint: .topLeading, endPoint: .bottomTrailing))
         .foregroundColor(.white)
         .cornerRadius(12)

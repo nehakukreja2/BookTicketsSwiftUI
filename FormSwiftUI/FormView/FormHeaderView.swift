@@ -9,6 +9,7 @@ import SwiftUI
 
 struct FormHeaderView: View {
     
+    // MARK: - PROPERTIES
     @State var headerIcon: String
     @State var headertitle: String
     
@@ -16,6 +17,7 @@ struct FormHeaderView: View {
         HStack {
             Image(systemName: headerIcon)
             Text(headertitle)
-        }.padding(EdgeInsets(top: 0, leading: -20, bottom: 0, trailing: 0))
+        } // : HSTACK
+        .padding(EdgeInsets(top: 0, leading: -20, bottom: 0, trailing: 0))
     }
 }

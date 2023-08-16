@@ -9,6 +9,7 @@ import SwiftUI
 
 struct FlightSearchFormView: View {
     
+    var headers: [FormSectionHeader] = FormSectionHeader.allCases
     @State private var selectedDate: Date = Date()
     @State private var moveToView: Bool = false
     @State private var datePickerId: Int = 0
@@ -20,39 +21,47 @@ struct FlightSearchFormView: View {
         NavigationView {
             // MARK: - FORM
             Form {
-                // MARK: - SECTION (Origin station)
-                Section(header: FormHeaderView(headerIcon: "location.fill", headertitle: "Origin Station")) {
-                    CustomDropDownMenu(selectionTitle: "Choose your origin station")
-                }.listRowBackground(Color.white)
-                
-                // MARK: - SECTION (Destination station)
-                Section(header: FormHeaderView(headerIcon: "mappin.and.ellipse", headertitle: "Destination Station")) {
-                    CustomDropDownMenu(selectionTitle: "Choose Destination Station")
-                }.listRowBackground(Color.white)
-                
-                // MARK: - SECTION (DEPARTURE DATE)
-                Section(header: FormHeaderView(headerIcon: "calendar", headertitle: "Departure date")) {
-                    DatePicker(selection: $selectedDate, in: Date.now..., displayedComponents: .date) {
-                            Text("Select departure date")
-                    }
-                    .id(datePickerId)
-                    .onChange(of: selectedDate, perform: { _ in
-                        datePickerId += 1
-                    })
-                    .onTapGesture {
-                        datePickerId += 1
-                    }
+                ForEach(headers) { header in
+                    // MARK: - SECTIONS (ORIGIN STATION, DESTINATION STATION, DEPARTURE DATE, PASSENGERS)
+                    Section(header: FormHeaderView(headerIcon: header.headerIcon, headertitle: header.headerTitle)) {
+                        switch header {
+                        case .originStation:
+                            CustomDropDownMenu(selectionTitle: header.selectionTitle, isFirstSection: true)
+                        case .destinationStation:
+                            CustomDropDownMenu(selectionTitle: header.selectionTitle, isFirstSection: false)
+                        case .departureDate:
+                            DatePicker(selection: $selectedDate, in: Date.now..., displayedComponents: .date) {
+                                Text(StringConstants.departDate.rawValue)
+                            }
+                            .id(datePickerId)
+                            .onChange(of: selectedDate, perform: { _ in
+                                datePickerId += 1
+                            })
+                            .onTapGesture {
+                                datePickerId += 1
+                            }
+                            .onAppear {
+                                selectedDate = Date()
+                            }
+                        case .passengers:
+                            VStack {
+                                Stepper("\(StringConstants.adults.rawValue)\(adults)", value: $adults, in: AppConstants.minAdults.rawValue...AppConstants.maxPassengerCount.rawValue)
+                                    .onAppear {
+                                        adults = AppConstants.minAdults.rawValue
+                                    }
+                                Stepper("\(StringConstants.teens.rawValue)\(teens)", value: $teens, in: AppConstants.minChildren.rawValue...AppConstants.maxPassengerCount.rawValue)
+                                    .onAppear {
+                                        teens = AppConstants.minChildren.rawValue
+                                    }
+                                Stepper("\(StringConstants.children.rawValue)\(kids)", value: $kids, in: AppConstants.minChildren.rawValue...AppConstants.maxPassengerCount.rawValue)
+                                    .onAppear {
+                                        kids = AppConstants.minChildren.rawValue
+                                    }
+                            }
+                        }
+                    } // : SECTIONS (ORIGIN STATION, DESTINATION STATION, DEPARTURE DATE, PASSENGERS)
+                    .listRowBackground(Color.white) // Apply the background color to each section
                 }
-                
-                // MARK: - SECTION (PASSENGERS)
-                Section(header: FormHeaderView(headerIcon: "person.3.fill", headertitle: "Passengers")) {
-                    VStack {
-                        Stepper("Adults: \(adults)", value: $adults, in: 1...6)
-                        Stepper("Teens: \(teens)", value: $teens, in: 0...6)
-                        Stepper("Children: \(kids)", value: $kids, in: 0...6)
-                    }
-                }
-                
                 // MARK: - SECTION (SEARCH BUTTON)
                 Section {
                     ZStack {
@@ -62,7 +71,7 @@ struct FlightSearchFormView: View {
                         Button(action: {
                             moveToView = true
                         }, label: {
-                            Text("Search Flights")
+                            Text(StringConstants.searchFlights.rawValue)
                                 .frame(maxWidth: .infinity)
                         })
                         .frame(height: 50)
@@ -72,8 +81,8 @@ struct FlightSearchFormView: View {
                         .bold()
                     }
                 }.listRowBackground(Color.clear)
-            } // MARK: - FORM
-            .navigationBarTitle("Search Flights")
+            } // : FORM
+            .navigationBarTitle(StringConstants.searchFlights.rawValue)
         }.edgesIgnoringSafeArea(.all)
     }
 }

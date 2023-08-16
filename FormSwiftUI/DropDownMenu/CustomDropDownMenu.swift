@@ -14,6 +14,7 @@ struct CustomDropDownMenu: View {
     ]
     @State var isSelecting = false
     @State var selectionTitle = ""
+    @State var isFirstSection: Bool = false
     
     var body: some View {
         HStack {
@@ -31,6 +32,9 @@ struct CustomDropDownMenu: View {
                 withAnimation(.easeInOut(duration: 0.3)) {
                     isSelecting.toggle()
                 }
+            }
+            .onAppear {
+                selectionTitle = isFirstSection ? StringConstants.chooseOriginStation.rawValue : StringConstants.chooseDestStation.rawValue
             }
         if isSelecting {
             ScrollView(.vertical) {

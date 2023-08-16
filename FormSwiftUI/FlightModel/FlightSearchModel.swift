@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Flight: Identifiable {
+struct Flight: Identifiable, Decodable {
     var id = UUID()
     var date: Date
     var flightNumber: String

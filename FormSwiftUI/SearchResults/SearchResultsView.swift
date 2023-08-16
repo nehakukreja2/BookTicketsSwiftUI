@@ -22,25 +22,26 @@ struct SearchResultsView: View {
                         Button(action: {
                             self.presentation.wrappedValue.dismiss()
                         }, label: {
-                            Image(systemName: "chevron.left")
+                            Image(systemName: StringConstants.backButtonImg.rawValue)
+                                .imageScale(.large)
                                 .padding(.leading, 20)
                                 .foregroundColor(.black)
-                        })
-                        Text("Search Results")
+                        }) // : BUTTON
+                        Text(StringConstants.searchResults.rawValue)
                             .font(.title)
                             .bold()
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .padding(0)
-                    }
+                    } // : HSTACK
                     LazyVGrid(columns: columns, spacing: 16) {
                         ForEach(0..<6) { _ in
                             FlightSearchResultCardView()
-                                .padding(.horizontal, 20)
+                                .padding(.horizontal, 10)
                         }
                     }
                     Spacer()
-                }
-            }
+                } // : VSTACK
+            } // : SCROLL VIEW
         }.navigationBarHidden(true)
     }
 }
