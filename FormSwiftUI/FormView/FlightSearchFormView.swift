@@ -10,12 +10,12 @@ import SwiftUI
 struct FlightSearchFormView: View {
     
     var headers: [FormSectionHeader] = FormSectionHeader.allCases
-    @State private var selectedDate: Date = Date()
-    @State private var moveToView: Bool = false
-    @State private var datePickerId: Int = 0
-    @State private var adults: Int = 1
-    @State private var kids: Int = 0
-    @State private var teens: Int = 0
+    @State var selectedDate: Date = Date()
+    @State var moveToView: Bool = false
+    @State var datePickerId: Int = 0
+    @State var adults: Int = 1
+    @State var kids: Int = 0
+    @State var teens: Int = 0
     
     var body: some View {
         NavigationView {
@@ -87,7 +87,7 @@ struct FlightSearchFormView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct FlightSearchFormView_Previews: PreviewProvider {
     static var previews: some View {
         FlightSearchFormView()
     }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		847DF2F92A8CEE68004CF76E /* FormSwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847DF2F82A8CEE68004CF76E /* FormSwiftUIUITests.swift */; };
+		847DF2FB2A8CEE68004CF76E /* FormSwiftUIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847DF2FA2A8CEE68004CF76E /* FormSwiftUIUITestsLaunchTests.swift */; };
 		8486ABA12A8B73F800EA8AF0 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8486ABA02A8B73F800EA8AF0 /* Launch Screen.storyboard */; };
 		8486ABA32A8BAD1F00EA8AF0 /* FlightSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486ABA22A8BAD1F00EA8AF0 /* FlightSearchModel.swift */; };
 		8486ABA72A8BBCC200EA8AF0 /* FormHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486ABA62A8BBCC200EA8AF0 /* FormHeaderView.swift */; };
@@ -22,7 +24,20 @@
 		84F922C32A8B2FAB000A2DD3 /* CustomDropDownMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F922C22A8B2FAB000A2DD3 /* CustomDropDownMenu.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		847DF2FC2A8CEE68004CF76E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 849BD5A52A8A8F0500BCD424 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 849BD5AC2A8A8F0500BCD424;
+			remoteInfo = FormSwiftUI;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		847DF2F62A8CEE68004CF76E /* FormSwiftUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FormSwiftUIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		847DF2F82A8CEE68004CF76E /* FormSwiftUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormSwiftUIUITests.swift; sourceTree = "<group>"; };
+		847DF2FA2A8CEE68004CF76E /* FormSwiftUIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormSwiftUIUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		8486ABA02A8B73F800EA8AF0 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		8486ABA22A8BAD1F00EA8AF0 /* FlightSearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightSearchModel.swift; sourceTree = "<group>"; };
 		8486ABA62A8BBCC200EA8AF0 /* FormHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormHeaderView.swift; sourceTree = "<group>"; };
@@ -40,6 +55,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		847DF2F32A8CEE68004CF76E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		849BD5AA2A8A8F0500BCD424 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -50,6 +72,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		847DF2F72A8CEE68004CF76E /* FormSwiftUIUITests */ = {
+			isa = PBXGroup;
+			children = (
+				847DF2F82A8CEE68004CF76E /* FormSwiftUIUITests.swift */,
+				847DF2FA2A8CEE68004CF76E /* FormSwiftUIUITestsLaunchTests.swift */,
+			);
+			path = FormSwiftUIUITests;
+			sourceTree = "<group>";
+		};
 		8486ABAC2A8C9A7600EA8AF0 /* DropDownMenu */ = {
 			isa = PBXGroup;
 			children = (
@@ -90,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				849BD5AF2A8A8F0500BCD424 /* FormSwiftUI */,
+				847DF2F72A8CEE68004CF76E /* FormSwiftUIUITests */,
 				849BD5AE2A8A8F0500BCD424 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -98,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				849BD5AD2A8A8F0500BCD424 /* FormSwiftUI.app */,
+				847DF2F62A8CEE68004CF76E /* FormSwiftUIUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -129,6 +162,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		847DF2F52A8CEE68004CF76E /* FormSwiftUIUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 847DF2FE2A8CEE68004CF76E /* Build configuration list for PBXNativeTarget "FormSwiftUIUITests" */;
+			buildPhases = (
+				847DF2F22A8CEE68004CF76E /* Sources */,
+				847DF2F32A8CEE68004CF76E /* Frameworks */,
+				847DF2F42A8CEE68004CF76E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				847DF2FD2A8CEE68004CF76E /* PBXTargetDependency */,
+			);
+			name = FormSwiftUIUITests;
+			productName = FormSwiftUIUITests;
+			productReference = 847DF2F62A8CEE68004CF76E /* FormSwiftUIUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		849BD5AC2A8A8F0500BCD424 /* FormSwiftUI */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 849BD5BB2A8A8F0700BCD424 /* Build configuration list for PBXNativeTarget "FormSwiftUI" */;
@@ -156,6 +207,10 @@
 				LastSwiftUpdateCheck = 1400;
 				LastUpgradeCheck = 1400;
 				TargetAttributes = {
+					847DF2F52A8CEE68004CF76E = {
+						CreatedOnToolsVersion = 14.0;
+						TestTargetID = 849BD5AC2A8A8F0500BCD424;
+					};
 					849BD5AC2A8A8F0500BCD424 = {
 						CreatedOnToolsVersion = 14.0;
 					};
@@ -175,11 +230,19 @@
 			projectRoot = "";
 			targets = (
 				849BD5AC2A8A8F0500BCD424 /* FormSwiftUI */,
+				847DF2F52A8CEE68004CF76E /* FormSwiftUIUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		847DF2F42A8CEE68004CF76E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		849BD5AB2A8A8F0500BCD424 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -193,6 +256,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		847DF2F22A8CEE68004CF76E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				847DF2FB2A8CEE68004CF76E /* FormSwiftUIUITestsLaunchTests.swift in Sources */,
+				847DF2F92A8CEE68004CF76E /* FormSwiftUIUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		849BD5A92A8A8F0500BCD424 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -212,7 +284,47 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		847DF2FD2A8CEE68004CF76E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 849BD5AC2A8A8F0500BCD424 /* FormSwiftUI */;
+			targetProxy = 847DF2FC2A8CEE68004CF76E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		847DF2FF2A8CEE68004CF76E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Appinventiv.FormSwiftUIUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FormSwiftUI;
+			};
+			name = Debug;
+		};
+		847DF3002A8CEE68004CF76E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Appinventiv.FormSwiftUIUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FormSwiftUI;
+			};
+			name = Release;
+		};
 		849BD5B92A8A8F0700BCD424 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -388,6 +500,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		847DF2FE2A8CEE68004CF76E /* Build configuration list for PBXNativeTarget "FormSwiftUIUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				847DF2FF2A8CEE68004CF76E /* Debug */,
+				847DF3002A8CEE68004CF76E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		849BD5A82A8A8F0500BCD424 /* Build configuration list for PBXProject "FormSwiftUI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
