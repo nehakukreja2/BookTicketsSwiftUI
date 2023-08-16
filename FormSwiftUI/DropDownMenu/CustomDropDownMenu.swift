@@ -24,7 +24,7 @@ struct CustomDropDownMenu: View {
                 .font(.system(size: 16, weight: .semibold, design: .rounded))
                 .foregroundColor(.black)
             Spacer()
-            Image(systemName: "chevron.down")
+            Image(systemName: AppImages.dropDownBtn.rawValue)
                 .foregroundColor(Color.black)
                 .font(.system(size: 16, weight: .regular))
                 .rotationEffect(.degrees( isSelecting ? -180 : 0))
