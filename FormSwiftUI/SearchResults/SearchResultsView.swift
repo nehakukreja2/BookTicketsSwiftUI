@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SearchResultsView: View {
     
+    // MARK: - PROPERTIES
     @Environment(\.presentationMode) var presentation
     var columns: [GridItem] = [
         GridItem(.flexible(minimum: 100))
@@ -22,7 +23,7 @@ struct SearchResultsView: View {
                         Button(action: {
                             self.presentation.wrappedValue.dismiss()
                         }, label: {
-                            Image(systemName: StringConstants.backButtonImg.rawValue)
+                            Image(systemName: AppImages.backButtonImg.rawValue)
                                 .imageScale(.large)
                                 .padding(.leading, 20)
                                 .foregroundColor(.black)

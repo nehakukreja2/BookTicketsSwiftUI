@@ -10,25 +10,23 @@ import SwiftUI
 struct FlightSearchFormView: View {
     
     var headers: [FormSectionHeader] = FormSectionHeader.allCases
+    var viewModel = FlightSearchVM()
     @State var selectedDate: Date = Date()
     @State var moveToView: Bool = false
     @State var datePickerId: Int = 0
-    @State var adults: Int = 1
-    @State var kids: Int = 0
-    @State var teens: Int = 0
     
     var body: some View {
         NavigationView {
             // MARK: - FORM
             Form {
+                // MARK: - SECTIONS (ORIGIN STATION, DESTINATION STATION, DEPARTURE DATE, PASSENGERS)
                 ForEach(headers) { header in
-                    // MARK: - SECTIONS (ORIGIN STATION, DESTINATION STATION, DEPARTURE DATE, PASSENGERS)
                     Section(header: FormHeaderView(headerIcon: header.headerIcon, headertitle: header.headerTitle)) {
                         switch header {
                         case .originStation:
-                            CustomDropDownMenu(selectionTitle: header.selectionTitle, isFirstSection: true)
+                            CustomDropDownMenu(stations: viewModel.stations, selectionTitle: header.selectionTitle, isFirstSection: true)
                         case .destinationStation:
-                            CustomDropDownMenu(selectionTitle: header.selectionTitle, isFirstSection: false)
+                            CustomDropDownMenu(stations: viewModel.stations, selectionTitle: header.selectionTitle, isFirstSection: false)
                         case .departureDate:
                             DatePicker(selection: $selectedDate, in: Date.now..., displayedComponents: .date) {
                                 Text(StringConstants.departDate.rawValue)
@@ -44,20 +42,7 @@ struct FlightSearchFormView: View {
                                 selectedDate = Date()
                             }
                         case .passengers:
-                            VStack {
-                                Stepper("\(StringConstants.adults.rawValue)\(adults)", value: $adults, in: AppConstants.minAdults.rawValue...AppConstants.maxPassengerCount.rawValue)
-                                    .onAppear {
-                                        adults = AppConstants.minAdults.rawValue
-                                    }
-                                Stepper("\(StringConstants.teens.rawValue)\(teens)", value: $teens, in: AppConstants.minChildren.rawValue...AppConstants.maxPassengerCount.rawValue)
-                                    .onAppear {
-                                        teens = AppConstants.minChildren.rawValue
-                                    }
-                                Stepper("\(StringConstants.children.rawValue)\(kids)", value: $kids, in: AppConstants.minChildren.rawValue...AppConstants.maxPassengerCount.rawValue)
-                                    .onAppear {
-                                        kids = AppConstants.minChildren.rawValue
-                                    }
-                            }
+                            PassengersView()
                         }
                     } // : SECTIONS (ORIGIN STATION, DESTINATION STATION, DEPARTURE DATE, PASSENGERS)
                     .listRowBackground(Color.white) // Apply the background color to each section

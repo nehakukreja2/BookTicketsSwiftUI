@@ -7,13 +7,9 @@
 
 import SwiftUI
 
-struct DropdownItem: Identifiable {
-    let id: Int
-    let title: String
-    let onSelect: () -> Void
-}
-
 struct DropDownMenuItem: View {
+    
+    // MARK: - PROPERTIES
     @Binding var isSelecting: Bool
     @Binding var selectiontitle: String
     let item: DropdownItem
@@ -31,9 +27,9 @@ struct DropDownMenuItem: View {
                         .foregroundColor(Color.black)
                         .frame(height: 30)
                     Spacer()
-                }
+                } // : HSTACK
                 Divider()
-            }
+            } // : VSTACK
             .foregroundColor(.white)
         }
     }

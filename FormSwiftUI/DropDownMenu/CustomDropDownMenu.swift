@@ -9,12 +9,14 @@ import SwiftUI
 
 struct CustomDropDownMenu: View {
     
-    var columns: [GridItem] = [
-        GridItem(.flexible(minimum: 100))
-    ]
+    // MARK: - PROPERTIES
+    @State var stations: [String] = []
     @State var isSelecting = false
     @State var selectionTitle = ""
     @State var isFirstSection: Bool = false
+    var columns: [GridItem] = [
+        GridItem(.flexible(minimum: 100))
+    ]
     
     var body: some View {
         HStack {
@@ -26,7 +28,8 @@ struct CustomDropDownMenu: View {
                 .foregroundColor(Color.black)
                 .font(.system(size: 16, weight: .regular))
                 .rotationEffect(.degrees( isSelecting ? -180 : 0))
-        }.frame(maxWidth: .infinity, maxHeight: .infinity)
+        } // : HSTACK
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
             .background(Color.white)
             .onTapGesture {
                 withAnimation(.easeInOut(duration: 0.3)) {
@@ -39,17 +42,12 @@ struct CustomDropDownMenu: View {
         if isSelecting {
             ScrollView(.vertical) {
                 LazyVGrid(columns: columns) {
-                    DropDownMenuItem(isSelecting: $isSelecting, selectiontitle: $selectionTitle, item: .init(id: 1, title: "Messages", onSelect: {}))
-                    DropDownMenuItem(isSelecting: $isSelecting, selectiontitle: $selectionTitle, item: .init(id: 2, title: "Archived", onSelect: {}))
-                    DropDownMenuItem(isSelecting: $isSelecting, selectiontitle: $selectionTitle, item: .init(id: 3, title: "Trash", onSelect: {}))
-                    DropDownMenuItem(isSelecting: $isSelecting, selectiontitle: $selectionTitle, item: .init(id: 1, title: "Messages", onSelect: {}))
-                    DropDownMenuItem(isSelecting: $isSelecting, selectiontitle: $selectionTitle, item: .init(id: 2, title: "Archived", onSelect: {}))
-                    DropDownMenuItem(isSelecting: $isSelecting, selectiontitle: $selectionTitle, item: .init(id: 3, title: "Trash", onSelect: {}))
-                    DropDownMenuItem(isSelecting: $isSelecting, selectiontitle: $selectionTitle, item: .init(id: 1, title: "Messages", onSelect: {}))
-                    DropDownMenuItem(isSelecting: $isSelecting, selectiontitle: $selectionTitle, item: .init(id: 2, title: "Archived", onSelect: {}))
-                    DropDownMenuItem(isSelecting: $isSelecting, selectiontitle: $selectionTitle, item: .init(id: 3, title: "Trash", onSelect: {}))
+                    ForEach(0..<stations.count) { i in
+                        DropDownMenuItem(isSelecting: $isSelecting, selectiontitle: $selectionTitle, item: .init(id: i+1, title: stations[i], onSelect: {}))
+                    }
                 }
-            }.frame(height: 150)
+            } // : SCROLL VIEW
+            .frame(height: 150)
         }
     }
 }

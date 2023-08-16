@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		847DF2F92A8CEE68004CF76E /* FormSwiftUIUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847DF2F82A8CEE68004CF76E /* FormSwiftUIUITests.swift */; };
 		847DF2FB2A8CEE68004CF76E /* FormSwiftUIUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847DF2FA2A8CEE68004CF76E /* FormSwiftUIUITestsLaunchTests.swift */; };
+		847DF3042A8D1CFF004CF76E /* DropDownItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847DF3032A8D1CFF004CF76E /* DropDownItem.swift */; };
+		847DF3062A8D1DD1004CF76E /* PassengersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847DF3052A8D1DD1004CF76E /* PassengersView.swift */; };
 		8486ABA12A8B73F800EA8AF0 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8486ABA02A8B73F800EA8AF0 /* Launch Screen.storyboard */; };
 		8486ABA32A8BAD1F00EA8AF0 /* FlightSearchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486ABA22A8BAD1F00EA8AF0 /* FlightSearchModel.swift */; };
 		8486ABA72A8BBCC200EA8AF0 /* FormHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8486ABA62A8BBCC200EA8AF0 /* FormHeaderView.swift */; };
@@ -38,6 +40,8 @@
 		847DF2F62A8CEE68004CF76E /* FormSwiftUIUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FormSwiftUIUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		847DF2F82A8CEE68004CF76E /* FormSwiftUIUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormSwiftUIUITests.swift; sourceTree = "<group>"; };
 		847DF2FA2A8CEE68004CF76E /* FormSwiftUIUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormSwiftUIUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		847DF3032A8D1CFF004CF76E /* DropDownItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownItem.swift; sourceTree = "<group>"; };
+		847DF3052A8D1DD1004CF76E /* PassengersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassengersView.swift; sourceTree = "<group>"; };
 		8486ABA02A8B73F800EA8AF0 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		8486ABA22A8BAD1F00EA8AF0 /* FlightSearchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlightSearchModel.swift; sourceTree = "<group>"; };
 		8486ABA62A8BBCC200EA8AF0 /* FormHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormHeaderView.swift; sourceTree = "<group>"; };
@@ -86,6 +90,7 @@
 			children = (
 				849BD5BE2A8A981100BCD424 /* DropDownMenuItem.swift */,
 				84F922C22A8B2FAB000A2DD3 /* CustomDropDownMenu.swift */,
+				847DF3032A8D1CFF004CF76E /* DropDownItem.swift */,
 			);
 			path = DropDownMenu;
 			sourceTree = "<group>";
@@ -104,6 +109,7 @@
 				849BD5B22A8A8F0500BCD424 /* FlightSearchFormView.swift */,
 				8486ABA62A8BBCC200EA8AF0 /* FormHeaderView.swift */,
 				8486ABB12A8CA3F800EA8AF0 /* FlightSearchVM.swift */,
+				847DF3052A8D1DD1004CF76E /* PassengersView.swift */,
 			);
 			path = FormView;
 			sourceTree = "<group>";
@@ -273,6 +279,8 @@
 				849BD5B32A8A8F0500BCD424 /* FlightSearchFormView.swift in Sources */,
 				8486ABA92A8BBFC900EA8AF0 /* SearchResultsView.swift in Sources */,
 				8486ABA32A8BAD1F00EA8AF0 /* FlightSearchModel.swift in Sources */,
+				847DF3042A8D1CFF004CF76E /* DropDownItem.swift in Sources */,
+				847DF3062A8D1DD1004CF76E /* PassengersView.swift in Sources */,
 				8486ABA72A8BBCC200EA8AF0 /* FormHeaderView.swift in Sources */,
 				849BD5B12A8A8F0500BCD424 /* FormSwiftUIApp.swift in Sources */,
 				8486ABAB2A8BC06600EA8AF0 /* FlightSearchResultCardView.swift in Sources */,

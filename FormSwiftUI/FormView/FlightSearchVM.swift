@@ -17,35 +17,35 @@ enum FormSectionHeader: Identifiable, CaseIterable {
     var headerTitle: String {
         switch self {
         case .originStation:
-            return "Origin Station"
+            return StringConstants.originStation.rawValue
         case .destinationStation:
-            return "Destination Station"
+            return StringConstants.destinationStation.rawValue
         case .departureDate:
-            return "Departure date"
+            return StringConstants.departureDate.rawValue
         case .passengers:
-            return "Passengers"
+            return StringConstants.passengers.rawValue
         }
     }
     
     var headerIcon: String {
         switch self {
         case .originStation:
-            return "location.fill"
+            return AppImages.locationFill.rawValue
         case .destinationStation:
-            return "mappin.and.ellipse"
+            return AppImages.mapPin.rawValue
         case .departureDate:
-            return "calendar"
+            return AppImages.calendarImg.rawValue
         case .passengers:
-            return "person.3.fill"
+            return AppImages.passengersImg.rawValue
         }
     }
     
     var selectionTitle: String {
         switch self {
         case .originStation:
-            return "Choose your origin station"
+            return StringConstants.chooseOriginStation.rawValue
         case .destinationStation:
-            return "Choose Destination Station"
+            return StringConstants.chooseDestStation.rawValue
         default:
             return ""
         }
@@ -54,6 +54,7 @@ enum FormSectionHeader: Identifiable, CaseIterable {
 
 class FlightSearchVM {
     
+    var stations: [String] = ["New Delhi", "Kanpur City", "Goa", "Jaipur", "Noida", "Meerut", "Lucknow", "Agra", "Pune"]
     var flights: [Flight]?
     
     func hitAPIToSearchFlights() {
